@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function insertel() {
+            let arr = [20, 30, 50, 60, 70, 80];
+            let newEl=document.getElementById('newEl').value;
+            let position=document.getElementById('position').value;
+            //let position = 2;
+           // let newEl = 40;
+            for (let i = arr.length - 1; i >= 0; i--) {
+                if (i >= position) {
+                    arr[i + 1] = arr[i];
+                    if (i == position) {
+                        arr[i] = newEl;
+                    }
+                }
+            }
+            console.warn(arr);
+           // console.log(arr)
+        }
+        
+    </script>
+</head>
+
+<body>
+    <input type="text" id="position" placeholder="Enter Position">
+    <input type="text" id="newEl" placeholder="Enter new Element">
+    <button onclick="insertel()">Insert</button>
+</body>
+
+</html>
